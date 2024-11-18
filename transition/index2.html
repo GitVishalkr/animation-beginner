@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timing function</title>
+  <style>
+    body{
+      background-color: beige;
+    }
+    .trans_container{
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      border-radius: 50%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      transition: all 2s;
+      /* text-wrap: nowrap; */
+    }
+    .parent_container:hover .trans_container{
+      background-color: yellowgreen;
+      margin-left: 400px;
+      cursor: pointer;
+    }
+    .ease{
+      transition-timing-function: ease;
+    }
+    .ease-in{
+      transition-timing-function: ease-in;
+    }
+    .ease-out{
+      transition-timing-function: ease-out;
+    }
+    .ease-in-out{
+      transition-timing-function: ease-in-out;
+    }
+    .step-start{
+     transition-timing-function: step-start;
+    } 
+    .step-end{
+     transition-timing-function: step-end;
+    } 
+  </style>
+</head>
+<body>
+  <h1>CSS Timing function</h1>
+  <div class="parent_container">
+    <div class="trans_container ease">
+      ease
+    </div>
+    <div class="trans_container ease-in">
+      ease-in
+    </div>
+    <div class="trans_container ease-out">
+      ease-out
+    </div>
+    <div class="trans_container ease-in-out">
+      ease-in-out
+    </div>
+    <div class="trans_container step-start">
+      step-start
+    </div>
+    <div class="trans_container step-end">
+      step-end
+    </div>
+  </div>
+</body>
+</html>

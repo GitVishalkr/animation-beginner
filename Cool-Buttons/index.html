@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Cool Buttons</title>
+  <style>
+    body {
+      background-color: bisque;
+    }
+
+    .cool_buttons {
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn_basics {
+      width: 250px;
+      font-size: 22px;
+      padding: 10px 20px;
+      border: none;
+      margin: 10px;
+      border-radius: 20px;
+      box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+    }
+
+    .grow_tr {
+      color: white;
+      background: rgb(2, 0, 36);
+      background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 100, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+      transition: all 0.2s linear;
+    }
+
+    .grow_tr:hover {
+      box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.4);
+      transform: scale(1.2)
+    }
+
+    .shrink_tr {
+      color: white;
+      background: rgb(34, 193, 195);
+      background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(99, 235, 93, 1) 22%, rgba(1, 11, 0, 1) 100%);
+      transition: all 0.3s;
+    }
+    .shrink_tr:hover{
+      box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+      transform: scale(0.8);
+    }
+
+    .color_tr{
+      position: relative;
+      z-index: 2;
+    }
+    .color_tr::before{
+      content: '';
+      background-color: red;
+      width: 0%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 20px;
+      transition: all 0.4s ease-in;
+    }
+    .color_tr:hover::before{
+      width: 100%;
+    }
+    .color_tr > span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .wave_tr {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+    }
+    .wave_tr::before{
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0px;
+      border-radius: 50%;
+      background-color: aquamarine;
+      top: -100px;
+      left: -20px;
+      transition: all 0.4s linear;
+    }
+    .wave_tr > span {
+      position: relative;
+      z-index: 1;
+    }
+    .wave_tr:hover::before{
+      height: 300px;
+      width: 300px;
+    }
+
+    /* icons */
+
+    .fa_icons {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: none;
+      margin: 10px;
+      font-size: 27px;
+    }
+     
+    .btn_container{
+      position: relative;
+    }
+    .fb_icon::before {
+      content: '';
+      position: absolute;
+      background-color: #3b5998;
+      height: 0px;
+      width: 0px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.4s linear;
+    }
+    .fb_icon {
+      transition: all 0.4s linear;
+    }
+    .fb_icon:hover{
+      cursor: pointer;
+      color: white;
+    }
+    .fb_icon:hover::before{
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+    }
+    .fa_fb{
+      position: relative;
+      z-index: 2;
+    }
+
+    /* yt icon */
+    .yt_icon {
+      transition: all 0.4s linear;
+    }
+    .yt_icon:hover{
+      cursor: pointer;
+      background-color:rgb(146, 10, 10); 
+      color: white;
+      transform: rotate(180deg);
+    }
+
+    /* twitter */
+
+    .tw_icon{
+      transition: all 0.3s linear;
+    }
+    .tw_icon:hover{
+      cursor: pointer;
+      color: white;
+      background-color: #1da1f2;
+      transform: skew(-10deg);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Cool Buttons</h1>
+  <section class="cool_buttons">
+    <div class="btn_container">
+      <button class="btn_basics grow_tr">
+        Expand
+      </button>
+    </div>
+    <div class="btn_container">
+      <button class="btn_basics shrink_tr">
+        Shrink
+      </button>
+    </div>
+    <div class="btn_container">
+      <button class="btn_basics color_tr">
+        <span>color change</span>
+      </button>
+    </div>
+    <div class="btn_container">
+      <button class="btn_basics wave_tr">
+        <span>circular wave</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="cool_buttons">
+    <div class="btn_container">
+      <button class="fa_icons fb_icon">
+        <i class="fa-brands fa-square-facebook fa_fb" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="btn_container">
+      <button class="fa_icons yt_icon">
+        <i class="fa-brands fa-square-youtube fa_yt" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="btn_container">
+      <button class="fa_icons tw_icon">
+        <i class="fa-brands fa-square-twitter fa_tw" aria-hidden="true"></i>
+      </button>
+    </div>
+  </section>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- To achieve true centering of the element, you need to adjust its position by applying a transform. The transform: translate(-50%, -50%) shifts the element back by half of its own width and height, effectively moving it so that its center aligns with the center of the containing block. Without this transform, only the top-left corner is centered, leaving the element offset from the center.
+In summary:
+With transform: The center of the element aligns with the center of its container.
+Without transform: Only the top-left corner is at the center, so the element appears offset.
+This behavior is a fundamental aspect of how positioning and transformations work in CSS.
+Related -->

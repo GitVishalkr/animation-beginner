@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .links {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .basic_reset {
+      text-transform: uppercase;
+      text-decoration: none;
+      color: black;
+      letter-spacing: 1px;
+    }
+
+    .products_link::after {
+      content: "";
+      background-color: brown;
+      display: block;
+      height: 0px;
+      width: 100%;
+      opacity: 0;
+      border-radius: 2px;
+      transition: all 0.2s ease-in;
+    }
+
+    .products_link:hover::after {
+      height: 4px;
+      opacity: 1;
+    }
+
+
+    /* loading 2ndl link */
+    .products_link1::after {
+      content: "";
+      background-color: blue;
+      display: block;
+      height: 4px;
+      width: 0%;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .products_link1:hover::after {
+      width: 100%;
+    }
+
+    /* link2 */
+    .products_link2::after {
+      content: "";
+      position: absolute;
+      left: 0%;
+      right: 0%;
+      bottom: -7px;
+      height: 3px;
+      background-color: blue;
+      transform: scaleX(0);
+      transition: all 0.2s linear;
+    }
+
+    .products_link2:hover::after {
+      transform: scaleX(1);
+    }
+
+/* link 3 */
+    .products_link3::after {
+    content: "";
+    background-color: blue;
+    display: block;
+    height: 4px;
+    /* width: 100%; Start with full width */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Anchor it to the left */
+    right: 0;
+    bottom: -4px; /* Position it below the text */
+    border-radius: 2px;
+    transform: scaleX(0); /* Start with scaleX at 0 */
+    transform-origin: right; /* Set origin for scaling from right */
+    transition: transform 0.3s ease; 
+    }
+    .products_link3:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* link4 */
+    .products_link4::after{
+      content: "";
+      background-color: purple;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -4px;
+      height: 3px;
+      transform: scaleX(0);
+      transition: all 0.2s linear;
+    }
+    .products_link4:hover::after{
+      transform: scaleX(1);
+    }
+    .products_link4::before{
+      content: "";
+      background-color: purple;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -4px;
+      height: 3px;
+      transform: scaleX(0);
+      transition: all 0.2s linear;
+    }
+    .products_link4:hover::before{
+      transform: scaleX(1);
+    }
+
+    /* link 5 */
+    .original_desc{
+      transition: all 0.3s;
+    }
+    .products_link5:hover .original_desc{
+      opacity: 0;
+    }
+    .products_link5::after{
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      right: 0;
+      /* bottom: -100%; */
+      text-align: center;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+    .products_link5:hover::after{
+      opacity: 1;
+      /* bottom: 0%; */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Links</h1>
+  <div class="links">
+    <a href="#" class="products_link basic_reset">Products</a>
+  </div>
+  <div class="links">
+    <a href="#" class="products_link1 basic_reset">Loading...</a>
+  </div>
+  <div class="links">
+    <a href="#" class="products_link2 basic_reset">...Loading...</a>
+  </div>
+  <div class="links">
+    <a href="#" class="products_link3 basic_reset">...Loading...</a>
+  </div>
+  <div class="links">
+    <a href="#" class="products_link4 basic_reset">Both sides</a>
+  </div>
+  <div class="links">
+    <a href="#" class="products_link5 basic_reset" data-text="About Me"><span class="original_desc">
+      My Portfolio
+    </span></a>
+  </div>
+</body>
+
+</html>
